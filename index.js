@@ -15,8 +15,17 @@ function randomSelection(obj) {
     const randomTrans = obj.transportation[randomIndex];
     const randomEnt = obj.entertainment[randomIndex];
 
-    return `${randomDest}, ${randomResturant}, ${randomTrans}, ${randomEnt}`;
+    return `Your destination: ${randomDest}, Your resturant: ${randomResturant}, Your transportation: ${randomTrans}, Your enterainment: ${randomEnt}`;
 }
 
-console.log(randomSelection(vacation));
+// function to display items to the DOM
+function displaySelections() {
+    let items = randomSelection(vacation);
 
+    let display = document.getElementById('vacation');
+    display.innerHTML = items;
+
+    
+}
+
+displaySelections();
