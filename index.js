@@ -24,8 +24,23 @@ function displaySelections() {
 
     let display = document.getElementById('vacation');
     display.innerHTML = items;
-
-    
 }
 
 displaySelections();
+
+function getAnswer(){ 
+    let question = "Are you satisfied with your trip?";
+    let decision = document.getElementById('decision');
+    decision.innerHTML = question; 
+
+    let btn1 = document.createElement("BUTTON");
+    let btn2 = document.createElement("BUTTON");
+
+    btn1.innerHTML = "Yes";
+    btn2.innerHTML = "No";
+
+    document.body.appendChild(btn1)
+    document.body.appendChild(btn2)
+}
+
+getAnswer();
