@@ -45,18 +45,28 @@ function getAnswer(obj){
     document.body.appendChild(btn1)
     document.body.appendChild(btn2)
 
-    btn1.addEventListener("click", yesButton(randomObj));
-    btn2.addEventListener("click", noButton(randomObj));
+    // btn1.addEventListener("click", yesButton(randomObj));
+    // btn2.addEventListener("click", noButton(randomObj));
+    btn1.onclick = function(){
+        yesButton();
+    };
+
+    btn2.onclick = function() {
+        noButton(randomObj);
+    }
 
 }
 getAnswer(vacation);
 
+
 // If user is satisfied, give trip complete message
-function yesButton(obj) {
-    console.log(obj)
+function yesButton() {
+    let yesMessage = document.getElementById('yes_message');
+    yesMessage.innerHTML = 'Your trip generator is complete. Enjoy!'
 }
 
+
 // If user is not satisfied, regenerate the whole trip until they are satisfied. 
-function noButton(){
-    
+function noButton(obj){
+    console.log(obj)
 }
