@@ -15,20 +15,23 @@ function randomSelection(obj) {
     const randomTrans = obj.transportation[randomIndex];
     const randomEnt = obj.entertainment[randomIndex];
 
-    return `Your destination: ${randomDest}, Your resturant: ${randomResturant}, Your transportation: ${randomTrans}, Your enterainment: ${randomEnt}`;
+    const randomItems = `Your destination: ${randomDest}, Your resturant: ${randomResturant}, Your transportation: ${randomTrans}, Your enterainment: ${randomEnt}`
+
+    return randomItems;
 }
+
+let randomObj = randomSelection(vacation);
 
 // function to display items to the DOM
-function displaySelections() {
-    let items = randomSelection(vacation);
+function displaySelections(obj) {
 
     let display = document.getElementById('vacation');
-    display.innerHTML = items;
+    display.innerHTML = obj;
+
 }
+displaySelections(randomObj);
 
-displaySelections();
-
-function getAnswer(){ 
+function getAnswer(obj){ 
     let question = "Are you satisfied with your trip?";
     let decision = document.getElementById('decision');
     decision.innerHTML = question; 
@@ -41,6 +44,19 @@ function getAnswer(){
 
     document.body.appendChild(btn1)
     document.body.appendChild(btn2)
+
+    btn1.addEventListener("click", yesButton(randomObj));
+    btn2.addEventListener("click", noButton(randomObj));
+
+}
+getAnswer(vacation);
+
+// If user is satisfied, give trip complete message
+function yesButton(obj) {
+    console.log(obj)
 }
 
-getAnswer();
+// If user is not satisfied, regenerate the whole trip until they are satisfied. 
+function noButton(){
+    
+}
