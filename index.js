@@ -45,6 +45,9 @@ function getAnswer(obj){
     document.body.appendChild(btn1)
     document.body.appendChild(btn2)
 
+    btn1.className = '.btn'
+    btn2.className = '.btn'
+
     btn1.onclick = function(){
         yesButton(randomObj);
     };
