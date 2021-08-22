@@ -36,17 +36,8 @@ function getAnswer(obj){
     let decision = document.getElementById('decision');
     decision.innerHTML = question; 
 
-    let btn1 = document.createElement("BUTTON");
-    let btn2 = document.createElement("BUTTON");
-
-    btn1.innerHTML = "Yes";
-    btn2.innerHTML = "No";
-
-    document.body.appendChild(btn1)
-    document.body.appendChild(btn2)
-
-    btn1.className = '.btn'
-    btn2.className = '.btn'
+    let btn1 = document.getElementById("btn1");
+    let btn2 = document.getElementById("btn2");
 
     btn1.onclick = function(){
         yesButton(randomObj);
@@ -55,7 +46,6 @@ function getAnswer(obj){
     btn2.onclick = function() {
         noButton(randomObj);
     }
-
 }
 getAnswer(vacation);
 

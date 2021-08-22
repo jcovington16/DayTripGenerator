@@ -11,8 +11,16 @@
     margin: 25px;
 }
 
-.btn {
-    text-align: center;
-    justify-content: center;
-    margin: 100px;
+#decision {
+    padding-bottom: 10px;
+}
+
+#btn1 {
+    padding: 5px;
+    margin: 5px;
+}
+
+#btn2 {
+    padding: 5px;
+    margin: 5px;
 }
